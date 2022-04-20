@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <h1>Welcome to Challenge</h1>
+    <p>Click the button to trigger a challenge</p>
+    <button>Click here to challenge</button>
+    <h3 id="result-container"></h3>
+
+    <script>
+      (function () {
+        const resultContainer = document.querySelector("#result-container");
+
+        const triggerChallenge = () => {
+          const options = ["Accepted", "Declined", "Postponed"];
+          const randomNumber = Math.floor(
+            Math.floor(Math.random() * options.length - 1) + 1
+          );
+
+          resultContainer.innerHTML = "Challenge " + options[randomNumber];
+        };
+
+        const button = document.querySelector("button");
+        button.addEventListener("click", triggerChallenge);
+      })();
+    </script>
+  </body>
+</html>
